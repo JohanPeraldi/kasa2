@@ -1,0 +1,41 @@
+.banner {
+	background-image: url(../assets/mountains.jpg);
+	background-color: lightgray;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 223px;
+	width: 100%;
+	border-radius: var(--border-radius);
+}
+
+.values {
+	margin-top: 31px;
+	margin-bottom: 31px;
+	display: flex;
+	flex-direction: column;
+	gap: 33px;
+}
+
+.subtitle-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-primary);
+	border-radius: 5px;
+	padding: 5px 18px;
+}
+
+.subtitle {
+	color: white;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.description {
+	background-color: var(--color-grey);
+	color: var(--color-primary);
+	padding: 27px 27px 19px 18px;
+	border-radius: 0 0 5px 5px;
+	font-size: 24px;
+	font-weight: 400;
+}

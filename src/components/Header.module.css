@@ -1,0 +1,20 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 0;
+}
+
+.navlist {
+	display: flex;
+	justify-content: space-between;
+	font-size: 24px;
+	width: 309px;
+}
+
+.navlist > li > a {
+	color: var(--color-primary);
+}
+
+.active {
+	text-decoration: underline;
+}
