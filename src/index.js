@@ -2,9 +2,9 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
-import About from './pages/About';
-import Home from './pages/Home';
-import NotFound404 from './pages/NotFound404';
+import About from './pages/About/About';
+import Home from './pages/Home/Home';
+import NotFound404 from './pages/NotFound404/NotFound404';
 import './index.module.css';
 
 const router = createBrowserRouter([
