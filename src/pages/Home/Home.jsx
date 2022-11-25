@@ -5,7 +5,9 @@ export default function Home() {
     <div>
       <div id="banner" className={styles.banner}>
         <div className={styles.overlay}></div>
-        <h1 className={styles.title}>Chez vous, partout et ailleurs</h1>
+        <h1 className={styles.title}>
+          <span>Chez vous,</span> partout et ailleurs
+        </h1>
       </div>
       <div id="ads" className={styles.ads}>
         <div className={styles.ad}>Appartement 1</div>

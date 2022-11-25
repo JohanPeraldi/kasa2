@@ -54,3 +54,36 @@
 	color: white;
 	font-size: 18px;
 }
+
+@media screen and (max-width: 599px) {
+	.banner {
+		justify-content: flex-start;
+		height: 111px;
+	}
+
+	.title {
+		margin-left: 16px;
+		font-size: 24px;
+		line-height: 1.2;
+	}
+
+	.title > span {
+		display: block;
+	}
+
+	.ads {
+		margin: 22px 0;
+		padding: 0;
+		gap: 20px;
+		background-color: white;
+	}
+
+	.ad {
+		flex-direction: column;
+		flex: initial;
+		justify-content: flex-end;
+		align-items: flex-start;
+		height: 255px;
+		width: 100%;
+	}
+}

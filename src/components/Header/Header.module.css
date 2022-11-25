@@ -1,7 +1,7 @@
 .header {
 	display: flex;
 	justify-content: space-between;
-	padding: 40px 0;
+	align-items: center;
 }
 
 .navlist {
@@ -17,4 +17,22 @@
 
 .active {
 	text-decoration: underline;
+}
+
+@media screen and (max-width: 599px) {
+	.header {
+		margin-bottom: 10px;
+	}
+
+	svg {
+		width: 145px;
+		height: 47px;
+	}
+
+	.navlist {
+		font-size: 12px;
+		text-transform: uppercase;
+		width: 140px;
+		padding: 0;
+	}
 }

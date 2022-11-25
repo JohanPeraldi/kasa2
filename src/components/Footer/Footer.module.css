@@ -11,3 +11,14 @@
 .copyright {
 	margin-top: 40px;
 }
+
+@media screen and (max-width: 599px) {
+	.footer {
+		font-size: 12px;
+	}
+
+	svg {
+		width: 122px;
+		height: 40px;
+	}
+}
