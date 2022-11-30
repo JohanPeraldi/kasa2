@@ -1,0 +1,42 @@
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--color-primary);
+	border-radius: 5px;
+	padding: 5px 18px;
+}
+
+.title {
+	color: white;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.description {
+	background-color: var(--color-grey);
+	color: var(--color-primary);
+	padding: 26px 18px;
+	border-radius: 0 0 5px 5px;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+@media screen and (max-width: 599px) {
+	.wrapper {
+		padding: 0 12px;
+	}
+
+	.title {
+		font-size: 13px;
+	}
+
+	.title + svg {
+		width: 18px;
+	}
+
+	.description {
+		padding: 16px 12px;
+		font-size: 12px;
+	}
+}
