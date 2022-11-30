@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+	flex: 1 1 30%;
+	justify-content: flex-start;
+	align-items: flex-end;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%), var(--color-primary);
+	width: 340px;
+	height: 340px;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.title {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 599px) {
+	.card {
+		flex-direction: column;
+		flex: initial;
+		justify-content: flex-end;
+		align-items: flex-start;
+		height: 255px;
+		width: 100%;
+	}
+}
