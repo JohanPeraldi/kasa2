@@ -13,6 +13,10 @@
 	font-weight: 500;
 }
 
+svg.down {
+	transform: rotate(180deg);
+}
+
 .description {
 	background-color: var(--color-grey);
 	color: var(--color-primary);
