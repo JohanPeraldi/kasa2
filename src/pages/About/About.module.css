@@ -1,13 +1,3 @@
-.banner {
-	background-image: url(../../assets/mountains.jpg);
-	background-color: lightgray;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 223px;
-	width: 100%;
-	border-radius: var(--border-radius);
-}
-
 .values {
 	margin-top: 31px;
 	margin-bottom: 31px;

@@ -6,6 +6,7 @@
 	background-color: lightgray;
 	background-repeat: no-repeat;
 	background-size: cover;
+	margin-top: 50px;
 	height: 223px;
 	width: 100%;
 	border-radius: var(--border-radius);
@@ -26,6 +27,7 @@
 @media screen and (max-width: 599px) {
 	.banner {
 		justify-content: flex-start;
+		margin-top: 20px;
 		height: 111px;
 	}
 }

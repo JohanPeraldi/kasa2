@@ -9,7 +9,7 @@ export default function NotFound404() {
     <>
       <MainWrapper>
         <Header />
-        <div className={styles.container}>
+        <main className={styles.container}>
           <h1 className={styles.title}>404</h1>
           <h2 className={styles.subtitle}>
             Oups! La page que vous demandez n'existe pas.
@@ -17,7 +17,7 @@ export default function NotFound404() {
           <Link to="/" className={styles.link}>
             Retourner sur la page d'accueil
           </Link>
-        </div>
+        </main>
       </MainWrapper>
       <Footer />
     </>

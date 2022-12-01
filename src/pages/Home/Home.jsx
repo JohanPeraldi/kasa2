@@ -1,4 +1,6 @@
+import Banner from '../../components/Banner/Banner';
 import Card from '../../components/Card/Card';
+import image from '../../assets/seaside.jpg';
 import styles from './Home.module.css';
 
 export default function Home() {
@@ -24,13 +26,12 @@ export default function Home() {
   ];
 
   return (
-    <div>
-      <div id="banner" className={styles.banner}>
-        <div className={styles.overlay}></div>
+    <main>
+      <Banner image={image}>
         <h1 className={styles.title}>
           <span>Chez vous,</span> partout et ailleurs
         </h1>
-      </div>
+      </Banner>
       <div id="ads" className={styles.ads}>
         <Card title={data[0].title} />
         <Card title={data[1].title} />
@@ -39,6 +40,6 @@ export default function Home() {
         <Card title={data[4].title} />
         <Card title={data[5].title} />
       </div>
-    </div>
+    </main>
   );
 }

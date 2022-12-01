@@ -1,4 +1,6 @@
+import Banner from '../../components/Banner/Banner';
 import Collapse from '../../components/Collapse/Collapse';
+import image from '../../assets/mountains.jpg';
 import styles from './About.module.css';
 
 export default function About() {
@@ -26,14 +28,14 @@ export default function About() {
   ];
 
   return (
-    <div>
-      <div id="banner" className={styles.banner}></div>
+    <main>
+      <Banner image={image} />
       <div id="values" className={styles.values}>
         <Collapse title={data[0].title} description={data[0].description} />
         <Collapse title={data[1].title} description={data[1].description} />
         <Collapse title={data[2].title} description={data[2].description} />
         <Collapse title={data[3].title} description={data[3].description} />
       </div>
-    </div>
+    </main>
   );
 }
