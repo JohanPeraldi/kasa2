@@ -27,6 +27,18 @@
 	color: inherit;
 }
 
+@media screen and (max-width: 899px) {
+	.title {
+		font-size: 200px;
+	}
+
+	.subtitle {
+		margin-top: 42px;
+		margin-bottom: 84px;
+		font-size: 26px;
+	}
+}
+
 @media screen and (max-width: 599px) {
 	.title {
 		font-size: 96px;

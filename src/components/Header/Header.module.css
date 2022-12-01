@@ -19,12 +19,23 @@
 	text-decoration: underline;
 }
 
+@media screen and (max-width: 899px) {
+	.header + svg {
+		width: 180px;
+	}
+	
+	.navlist {
+		font-size: 20px;
+		width: 280px;
+	}
+}
+
 @media screen and (max-width: 599px) {
 	.header {
 		margin-bottom: 10px;
 	}
 
-	svg {
+	.header + svg {
 		width: 145px;
 		height: 47px;
 	}
@@ -34,5 +45,15 @@
 		text-transform: uppercase;
 		width: 140px;
 		padding: 0;
+	}
+}
+
+@media screen and (max-width: 372px) {
+	.header {
+		flex-direction: column;
+	}
+
+	#logo {
+		margin-left: 48.5px;
 	}
 }

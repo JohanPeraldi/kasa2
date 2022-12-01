@@ -22,6 +22,21 @@
 	font-weight: 400;
 }
 
+@media screen and (max-width: 899px) {
+	.title {
+		font-size: 18px;
+	}
+
+	.title + svg {
+		width: 20px;
+	}
+
+	.description {
+		font-size: 18px;
+		padding: 20px 18px;
+	}
+}
+
 @media screen and (max-width: 599px) {
 	.wrapper {
 		padding: 0 12px;
@@ -32,7 +47,7 @@
 	}
 
 	.title + svg {
-		width: 18px;
+		width: 16px;
 	}
 
 	.description {
