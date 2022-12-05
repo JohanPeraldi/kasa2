@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import Card from '../../components/Card/Card';
 import image from '../../assets/seaside.jpg';
@@ -27,7 +28,9 @@ export default function Home() {
       </Banner>
       <div id="ads" className={styles.ads}>
         {ads.map((ad) => (
-          <Card key={ad.id} title={ad.title} />
+          <Link to={`appartements/${ad.id}`} key={ad.id}>
+            <Card title={ad.title} />
+          </Link>
         ))}
       </div>
     </main>
