@@ -6,8 +6,8 @@
 }
 
 .ads {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 	gap: 40px;
 	background-color: var(--color-grey);
 	border-radius: var(--border-radius);
@@ -19,11 +19,23 @@
 	.title {
 		font-size: 42px;
 	}
+
+	.ads {
+		grid-template-columns: 1fr 1fr;
+	}
 }
 
 @media screen and (max-width: 899px) {
 	.title {
 		font-size: 34px;
+	}
+
+	.ads {
+		grid-template-columns: 1fr;
+		gap: 20px;
+		margin: 22px 0;
+		padding: 0;
+		background-color: white;
 	}
 }
 
@@ -36,12 +48,5 @@
 
 	.title > span {
 		display: block;
-	}
-
-	.ads {
-		margin: 22px 0;
-		padding: 0;
-		gap: 20px;
-		background-color: white;
 	}
 }

@@ -22,11 +22,16 @@ export default function Collapse(props) {
           />
         </svg>
       </div>
-      {isOpen && (
-        <p className={styles.description} style={props.visible}>
-          {props.description}
-        </p>
-      )}
+      {isOpen &&
+        (props.list ? (
+          <ul className={styles.description} style={props.visible}>
+            {props.description}
+          </ul>
+        ) : (
+          <p className={styles.description} style={props.visible}>
+            {props.description}
+          </p>
+        ))}
     </article>
   );
 }

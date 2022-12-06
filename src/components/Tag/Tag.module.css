@@ -1,0 +1,40 @@
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  background: var(--color-primary);
+  height: 25px;
+  width: 115px;
+  border-radius: var(--border-radius-sm);
+}
+
+.text {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1199px) {
+	.tag {
+    height: 22px;
+    width: 100px;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+	.tag {
+    margin: 12px 0;
+		height: 18px;
+    width: 84px;
+    border-radius: 5px;
+	}
+
+  .text {
+    font-size: 10px;
+  }
+}

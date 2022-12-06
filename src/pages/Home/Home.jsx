@@ -12,7 +12,6 @@ export default function Home() {
     const response = await fetch('/data/ads.json');
     const data = await response.json();
     setAds(data);
-    console.log(data);
   };
 
   useEffect(() => {

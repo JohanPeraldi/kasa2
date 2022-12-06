@@ -1,3 +1,157 @@
-.title {
+.flat {
   color: var(--color-primary);
+}
+
+.secondary-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.location {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+}
+
+.host-and-rating-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.host-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 24px;
+  text-align: end;
+}
+
+.host-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.host-family-name {
+  display: block;
+}
+
+.picture {
+  border-radius: 50%;
+}
+
+.rating-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rating {
+  font-size: 30px;
+}
+
+.description-and-equipments {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 16px;
+}
+
+.description-and-equipments > article {
+  flex: 0 1 47%;
+  row-gap: 76px;
+}
+
+li {
+  list-style: none;
+}
+
+@media screen and (max-width: 1199px) {
+	.title {
+		font-size: 30px;
+	}
+
+  .location {
+    font-size: 16px;
+  }
+
+  .rating {
+    font-size: 24px;
+  }
+
+  .description-and-equipments {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .description-and-equipments > article {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .secondary-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+	.title {
+		font-size: 24px;
+	}
+
+  .host-and-rating-wrapper {
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .host-wrapper {
+    margin-bottom: 0;
+  }
+
+  .host-name {
+    font-size: 14px;
+  }
+
+  .picture {
+    height: 48px;
+    width: 48px;
+  }
+
+  .rating {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 599px) {  
+	.title {
+		font-size: 18px;
+	}
+
+  .location {
+    font-size: 14px;
+  }
+
+  .host-name {
+    font-size: 12px;
+  }
+
+  .picture {
+    height: 32px;
+    width: 32px;
+  }
+
+  .rating {
+    font-size: 15px;
+  }
 }
