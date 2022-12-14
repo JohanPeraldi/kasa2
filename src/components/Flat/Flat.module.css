@@ -59,6 +59,11 @@
   font-size: 30px;
 }
 
+.off {
+  font-size: 30px;
+  color: var(--color-grey);
+}
+
 .description-and-equipments {
   display: flex;
   justify-content: space-between;

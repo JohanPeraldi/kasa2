@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Collapse from '../Collapse/Collapse';
 import Slideshow from '../Slideshow/Slideshow';
@@ -5,19 +6,51 @@ import Tag from '../Tag/Tag';
 import styles from './Flat.module.css';
 
 export default function Flat() {
-  const params = useParams();
-  const data = [
-    {
-      title: 'Description',
-      description:
-        "Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à 1 station de la gare de l'est (7 minutes à pied).",
-    },
-    {
-      title: 'Équipements',
-      description:
-        'Climatisation,Wi-Fi,Cuisine,Espace de travail,Fer à repasser,Sèche-cheveux,Cintres',
-    },
-  ];
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const id = useParams().id;
+
+  let ad,
+    title,
+    location,
+    tags,
+    hostName,
+    hostFirstName,
+    hostLastName,
+    picture,
+    rating,
+    ratingArray,
+    off,
+    offArray;
+
+  useEffect(() => {
+    setLoading(true);
+    fetch('/data/ads.json')
+      .then((response) => response.json())
+      .then(setData)
+      .then(() => setLoading(false))
+      .catch(setError);
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <pre>{JSON.stringify(error)}</pre>;
+  if (!data) return null;
+  console.log('data: ', data);
+  ad = data.filter((ad) => ad.id === id)[0];
+  console.log('ad: ', ad);
+  title = ad.title;
+  location = ad.location;
+  tags = ad.tags;
+  hostName = ad.host.name;
+  hostFirstName = hostName.split(' ')[0];
+  hostLastName = hostName.split(' ')[1];
+  picture = ad.host.picture;
+  rating = Number(ad.rating);
+  ratingArray = new Array(rating).fill('★');
+  off = 5 - rating;
+  offArray = new Array(off).fill('★');
+  console.log('Rating array: ', ratingArray);
 
   return (
     <main className={styles.flat}>
@@ -25,32 +58,35 @@ export default function Flat() {
       <div className={styles['main-wrapper']}>
         <div className={styles['secondary-wrapper']}>
           <div className={styles['title-and-tags-wrapper']}>
-            <h1 className={styles.title}>Page de l'appartement {params.id}</h1>
-            <span className={styles.location}>Paris, Île-de-France</span>
+            <h1 className={styles.title}>{title}</h1>
+            <span className={styles.location}>{location}</span>
             <div className={styles.tags}>
-              <Tag text="Cosy" />
-              <Tag text="Canal" />
-              <Tag text="Paris 10" />
+              {tags.map((tag) => (
+                <Tag key={id + tag} text={tag} />
+              ))}
             </div>
           </div>
           <div className={styles['host-and-rating-wrapper']}>
             <div className={styles['host-wrapper']}>
               <span className={styles['host-name']}>
-                Alexandre{' '}
-                <span className={styles['host-family-name']}>Dumas</span>
+                {hostFirstName}
+                <span className={styles['host-family-name']}>
+                  {hostLastName}
+                </span>
               </span>
               <img
-                src="https://via.placeholder.com/64"
-                alt="Alexandre Dumas"
+                src={picture}
+                alt={hostName}
                 className={styles.picture}
               ></img>
             </div>
             <div className={styles['rating-wrapper']}>
-              <span className={styles.rating}>★ ★ ★ ★ ★</span>
+              <span className={styles.rating}>{ratingArray.join(' ')}</span>
+              <span className={styles.off}>{offArray.join(' ')}</span>
             </div>
           </div>
         </div>
-        <div className={styles['description-and-equipments']}>
+        {/* <div className={styles['description-and-equipments']}>
           <Collapse title={data[0].title} description={data[0].description} />
           <Collapse
             list={true}
@@ -59,7 +95,7 @@ export default function Flat() {
               <li>{item}</li>
             ))}
           />
-        </div>
+        </div> */}
       </div>
     </main>
   );
