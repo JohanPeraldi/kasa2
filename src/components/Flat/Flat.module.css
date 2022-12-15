@@ -53,6 +53,7 @@
 .rating-wrapper {
   display: flex;
   justify-content: flex-end;
+  column-gap: 8px;
 }
 
 .rating {
@@ -61,7 +62,7 @@
 
 .off {
   font-size: 30px;
-  color: var(--color-grey);
+  color: var(--color-grey-star);
 }
 
 .description-and-equipments {

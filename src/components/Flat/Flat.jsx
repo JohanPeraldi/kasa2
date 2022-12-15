@@ -22,7 +22,9 @@ export default function Flat() {
     rating,
     ratingArray,
     off,
-    offArray;
+    offArray,
+    description,
+    equipments;
 
   useEffect(() => {
     setLoading(true);
@@ -36,7 +38,6 @@ export default function Flat() {
   if (loading) return <p>Loading...</p>;
   if (error) return <pre>{JSON.stringify(error)}</pre>;
   if (!data) return null;
-  console.log('data: ', data);
   ad = data.filter((ad) => ad.id === id)[0];
   console.log('ad: ', ad);
   title = ad.title;
@@ -50,7 +51,8 @@ export default function Flat() {
   ratingArray = new Array(rating).fill('★');
   off = 5 - rating;
   offArray = new Array(off).fill('★');
-  console.log('Rating array: ', ratingArray);
+  description = ad.description;
+  equipments = ad.equipments.join(',');
 
   return (
     <main className={styles.flat}>
@@ -86,16 +88,16 @@ export default function Flat() {
             </div>
           </div>
         </div>
-        {/* <div className={styles['description-and-equipments']}>
-          <Collapse title={data[0].title} description={data[0].description} />
+        <div className={styles['description-and-equipments']}>
+          <Collapse title="Description" description={description} />
           <Collapse
             list={true}
-            title={data[1].title}
-            description={data[1].description.split(',').map((item) => (
+            title="Équipements"
+            description={equipments.split(',').map((item) => (
               <li>{item}</li>
             ))}
           />
-        </div> */}
+        </div>
       </div>
     </main>
   );

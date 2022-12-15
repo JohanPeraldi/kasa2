@@ -4,6 +4,7 @@
   /* Colours */
   --color-primary: #FF6060;
   --color-grey: #F7F7F7;
+  --color-grey-star: #E3E3E3;
   /* Breakpoints */
   --for-phones-only: 599px; /* max-width */
   --for-tablet-portrait-up: 600px; /* min-width */
