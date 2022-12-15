@@ -1,3 +1,4 @@
+/* This component should be in the pages directory! */
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Collapse from '../Collapse/Collapse';
@@ -10,6 +11,11 @@ export default function Flat() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const id = useParams().id;
+
+  /*
+  Remove the huge list of let declarations, use destructuring and use const variables instead
+  const { title, location, tags, host, picture, rating, description, equipments } = ad;
+  */
 
   let ad,
     title,
@@ -36,10 +42,18 @@ export default function Flat() {
   }, []);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <pre>{JSON.stringify(error)}</pre>;
-  if (!data) return null;
+  if (error)
+    return (
+      <pre>{JSON.stringify(error)}</pre>
+    ); /* Remove this line: we don't want to show the error on page */
+  if (!data)
+    return null; /* Not necessary. We can also add the following below: if (data) { return ... } */
   ad = data.filter((ad) => ad.id === id)[0];
   console.log('ad: ', ad);
+  /*
+  Use destructuring and use const variables instead
+  const { title, location, tags, host, picture, rating, description, equipments } = ad;
+  */
   title = ad.title;
   location = ad.location;
   tags = ad.tags;
@@ -52,7 +66,10 @@ export default function Flat() {
   off = 5 - rating;
   offArray = new Array(off).fill('★');
   description = ad.description;
-  equipments = ad.equipments.join(',');
+  equipments =
+    ad.equipments.join(
+      ','
+    ); /* Better to create a helper function to format equipments */
 
   return (
     <main className={styles.flat}>
