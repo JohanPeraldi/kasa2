@@ -1,36 +1,19 @@
-/* This component should be in the pages directory! */
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Collapse from '../Collapse/Collapse';
-import Slideshow from '../Slideshow/Slideshow';
-import Tag from '../Tag/Tag';
+import Collapse from '../../components/Collapse/Collapse';
+import Slideshow from '../../components/Slideshow/Slideshow';
+import Tag from '../../components/Tag/Tag';
 import styles from './Flat.module.css';
+
+function formatEquipments(eq) {
+  return eq.join(',');
+}
 
 export default function Flat() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const id = useParams().id;
-
-  /*
-  Remove the huge list of let declarations, use destructuring and use const variables instead
-  const { title, location, tags, host, picture, rating, description, equipments } = ad;
-  */
-
-  let ad,
-    title,
-    location,
-    tags,
-    hostName,
-    hostFirstName,
-    hostLastName,
-    picture,
-    rating,
-    ratingArray,
-    off,
-    offArray,
-    description,
-    equipments;
 
   useEffect(() => {
     setLoading(true);
@@ -42,34 +25,20 @@ export default function Flat() {
   }, []);
 
   if (loading) return <p>Loading...</p>;
-  if (error)
-    return (
-      <pre>{JSON.stringify(error)}</pre>
-    ); /* Remove this line: we don't want to show the error on page */
-  if (!data)
-    return null; /* Not necessary. We can also add the following below: if (data) { return ... } */
-  ad = data.filter((ad) => ad.id === id)[0];
+  if (error) console.log(error);
+  if (!data) return null;
+  const ad = data.filter((ad) => ad.id === id)[0];
   console.log('ad: ', ad);
-  /*
-  Use destructuring and use const variables instead
-  const { title, location, tags, host, picture, rating, description, equipments } = ad;
-  */
-  title = ad.title;
-  location = ad.location;
-  tags = ad.tags;
-  hostName = ad.host.name;
-  hostFirstName = hostName.split(' ')[0];
-  hostLastName = hostName.split(' ')[1];
-  picture = ad.host.picture;
-  rating = Number(ad.rating);
-  ratingArray = new Array(rating).fill('★');
-  off = 5 - rating;
-  offArray = new Array(off).fill('★');
-  description = ad.description;
-  equipments =
-    ad.equipments.join(
-      ','
-    ); /* Better to create a helper function to format equipments */
+  const { title, location, tags, host, rating, description, equipments } = ad;
+  const hostName = host.name;
+  const hostFirstName = hostName.split(' ')[0];
+  const hostLastName = hostName.split(' ')[1];
+  const picture = host.picture;
+  const numberRating = Number(rating);
+  const ratingArray = new Array(numberRating).fill('★');
+  const numberOfExtinctStars = 5 - numberRating;
+  const extinctStarsArray = new Array(numberOfExtinctStars).fill('★');
+  const formattedEquipments = formatEquipments(equipments);
 
   return (
     <main className={styles.flat}>
@@ -101,7 +70,9 @@ export default function Flat() {
             </div>
             <div className={styles['rating-wrapper']}>
               <span className={styles.rating}>{ratingArray.join(' ')}</span>
-              <span className={styles.off}>{offArray.join(' ')}</span>
+              <span className={styles['extinct-stars']}>
+                {extinctStarsArray.join(' ')}
+              </span>
             </div>
           </div>
         </div>
@@ -110,7 +81,7 @@ export default function Flat() {
           <Collapse
             list={true}
             title="Équipements"
-            description={equipments.split(',').map((item) => (
+            description={formattedEquipments.split(',').map((item) => (
               <li>{item}</li>
             ))}
           />

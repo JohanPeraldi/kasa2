@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import About from './pages/About/About';
-import Flat from './components/Flat/Flat';
+import Flat from './pages/Flat/Flat';
 import Home from './pages/Home/Home';
 import NotFound404 from './pages/NotFound404/NotFound404';
 import './index.module.css';
