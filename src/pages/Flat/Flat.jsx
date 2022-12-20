@@ -51,7 +51,7 @@ export default function Flat() {
 
   return (
     <main className={styles.flat}>
-      <Slideshow pictures={pictures} />
+      <Slideshow pictures={pictures} title={title} />
       <div className={styles['main-wrapper']}>
         <div className={styles['secondary-wrapper']}>
           <div className={styles['title-and-tags-wrapper']}>

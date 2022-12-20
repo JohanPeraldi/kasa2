@@ -30,6 +30,15 @@
   right: 8px;
 }
 
+.counter {
+  position: absolute;
+  left: 49%;
+  bottom: 18px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 1199px) {
   .chevron {
     height: 60px;
@@ -42,6 +51,11 @@
   
   .chevron-right {
     right: 6px;
+  }
+
+  .counter {
+    bottom: 16px;
+    font-size: 16px;
   }
 }
 
@@ -64,6 +78,11 @@
   .chevron-right {
     right: 4px;
   }
+
+  .counter {
+    bottom: 14px;
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 599px) {
@@ -78,5 +97,10 @@
   
   .chevron-right {
     right: 2px;
+  }
+
+  .counter {
+    bottom: 12px;
+    font-size: 12px;
   }
 }
