@@ -79,7 +79,7 @@ export default function Flat() {
             </div>
             <div className={styles['rating-wrapper']}>
               <span className={styles.rating}>{ratingArray.join(' ')}</span>
-              <span className={styles['extinct-stars']}>
+              <span className={`${styles.rating} ${styles['extinct-stars']}`}>
                 {extinctStarsArray.join(' ')}
               </span>
             </div>
