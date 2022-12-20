@@ -29,7 +29,16 @@ export default function Flat() {
   if (!data) return null;
   const ad = data.filter((ad) => ad.id === id)[0];
   console.log('ad: ', ad);
-  const { title, location, tags, host, rating, description, equipments } = ad;
+  const {
+    description,
+    equipments,
+    host,
+    location,
+    pictures,
+    rating,
+    tags,
+    title,
+  } = ad;
   const hostName = host.name;
   const hostFirstName = hostName.split(' ')[0];
   const hostLastName = hostName.split(' ')[1];
@@ -42,7 +51,7 @@ export default function Flat() {
 
   return (
     <main className={styles.flat}>
-      <Slideshow />
+      <Slideshow pictures={pictures} />
       <div className={styles['main-wrapper']}>
         <div className={styles['secondary-wrapper']}>
           <div className={styles['title-and-tags-wrapper']}>
