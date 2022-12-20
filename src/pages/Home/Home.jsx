@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import Card from '../../components/Card/Card';
-import image from '../../assets/seaside.jpg';
+import image from '../../assets/jpg/seaside.jpg';
 import styles from './Home.module.css';
 
 export default function Home() {

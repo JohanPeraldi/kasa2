@@ -13,10 +13,6 @@
 	font-weight: 500;
 }
 
-svg.down {
-	transform: rotate(180deg);
-}
-
 .description {
 	background-color: var(--color-grey);
 	color: var(--color-primary);
@@ -31,7 +27,7 @@ svg.down {
 		font-size: 18px;
 	}
 
-	.title + svg {
+	.title + img {
 		width: 20px;
 	}
 
@@ -50,7 +46,7 @@ svg.down {
 		font-size: 13px;
 	}
 
-	.title + svg {
+	.title + img {
 		width: 16px;
 	}
 

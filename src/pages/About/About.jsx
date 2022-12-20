@@ -1,6 +1,6 @@
 import Banner from '../../components/Banner/Banner';
 import Collapse from '../../components/Collapse/Collapse';
-import image from '../../assets/mountains.jpg';
+import image from '../../assets/jpg/mountains.jpg';
 import styles from './About.module.css';
 
 export default function About() {
