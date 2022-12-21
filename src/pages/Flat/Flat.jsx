@@ -6,7 +6,7 @@ import Tag from '../../components/Tag/Tag';
 import styles from './Flat.module.css';
 
 function formatEquipments(eq) {
-  return eq.join(',');
+  return eq.map((item) => <li key={item.toLowerCase()}>{item}</li>);
 }
 
 export default function Flat() {
@@ -28,7 +28,6 @@ export default function Flat() {
   if (error) console.log(error);
   if (!data) return null;
   const ad = data.filter((ad) => ad.id === id)[0];
-  console.log('ad: ', ad);
 
   if (ad) {
     const {
@@ -47,8 +46,10 @@ export default function Flat() {
     const picture = host.picture;
     const numberRating = Number(rating);
     const ratingArray = new Array(numberRating).fill('★');
+    const formattedRating = ratingArray.join(' ');
     const numberOfExtinctStars = 5 - numberRating;
     const extinctStarsArray = new Array(numberOfExtinctStars).fill('★');
+    const formattedExtinctStars = extinctStarsArray.join(' ');
     const formattedEquipments = formatEquipments(equipments);
 
     return (
@@ -80,9 +81,9 @@ export default function Flat() {
                 ></img>
               </div>
               <div className={styles['rating-wrapper']}>
-                <span className={styles.rating}>{ratingArray.join(' ')}</span>
+                <span className={styles.rating}>{formattedRating}</span>
                 <span className={`${styles.rating} ${styles['extinct-stars']}`}>
-                  {extinctStarsArray.join(' ')}
+                  {formattedExtinctStars}
                 </span>
               </div>
             </div>
@@ -92,9 +93,7 @@ export default function Flat() {
             <Collapse
               list={true}
               title="Équipements"
-              description={formattedEquipments.split(',').map((item) => (
-                <li key={item.toLowerCase()}>{item}</li>
-              ))}
+              description={formattedEquipments}
             />
           </div>
         </div>
