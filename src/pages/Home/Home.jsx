@@ -28,7 +28,7 @@ export default function Home() {
       <div id="ads" className={styles.ads}>
         {ads.map((ad) => (
           <Link to={`appartements/${ad.id}`} key={ad.id}>
-            <Card title={ad.title} />
+            <Card cover={ad.cover} title={ad.title} />
           </Link>
         ))}
       </div>
