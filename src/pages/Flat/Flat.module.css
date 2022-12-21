@@ -84,6 +84,19 @@ li {
   list-style: none;
 }
 
+.no-ads-wrapper {
+  min-height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-ads-text {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+}
+
 @media screen and (max-width: 1199px) {
 	.title {
 		font-size: 30px;
@@ -109,6 +122,10 @@ li {
   
   .description-and-equipments > article {
     width: 100%;
+  }
+
+  .no-ads-text {
+    font-size: 24px;
   }
 }
 
@@ -145,6 +162,14 @@ li {
   .rating {
     font-size: 20px;
   }
+
+  .no-ads-wrapper {
+    min-height: 60vh;
+  }
+
+  .no-ads-text {
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 599px) {  
@@ -167,5 +192,13 @@ li {
 
   .rating {
     font-size: 15px;
+  }
+
+  .no-ads-wrapper {
+    min-height: 64vh;
+  }
+
+  .no-ads-text {
+    font-size: 16px;
   }
 }
