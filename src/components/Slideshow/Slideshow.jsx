@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import chevronLeft from '../../assets/svg/chevron-left.svg';
 import chevronRight from '../../assets/svg/chevron-right.svg';
 import styles from './Slideshow.module.css';
@@ -49,3 +50,8 @@ export default function Slideshow(props) {
     )
   );
 }
+
+Slideshow.propTypes = {
+  pictures: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+};

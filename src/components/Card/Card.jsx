@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './Card.module.css';
 
 export default function Card(props) {
@@ -14,3 +15,8 @@ export default function Card(props) {
     </article>
   );
 }
+
+Card.propTypes = {
+  cover: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};

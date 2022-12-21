@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './Banner.module.css';
 
 export default function Banner(props) {
@@ -12,3 +13,8 @@ export default function Banner(props) {
     </div>
   );
 }
+
+Banner.propTypes = {
+  children: PropTypes.object,
+  image: PropTypes.string.isRequired,
+};

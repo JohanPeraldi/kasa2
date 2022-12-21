@@ -7,6 +7,10 @@
 }
 
 @media screen and (max-width: 599px) {
+	main {
+		min-height: 59vh;
+	}
+
 	.values {
 		margin-top: 20px;
 		margin-bottom: 20px;
