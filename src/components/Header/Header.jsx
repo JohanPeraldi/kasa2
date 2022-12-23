@@ -4,8 +4,8 @@ import styles from './Header.module.css';
 
 export default function Header() {
   return (
-    <div id="header" className={styles.header}>
-      <div id="logo">
+    <div className={styles.header}>
+      <div className={styles['logo-wrapper']}>
         <img src={logo} alt="Kasa logo" />
       </div>
       <nav>

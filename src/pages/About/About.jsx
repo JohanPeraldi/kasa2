@@ -26,16 +26,18 @@ export default function About() {
         "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
     },
   ];
+  const values = data.map((el) => (
+    <Collapse
+      key={el.title.toLowerCase()}
+      title={el.title}
+      description={el.description}
+    />
+  ));
 
   return (
     <main>
       <Banner image={image} />
-      <div id="values" className={styles.values}>
-        <Collapse title={data[0].title} description={data[0].description} />
-        <Collapse title={data[1].title} description={data[1].description} />
-        <Collapse title={data[2].title} description={data[2].description} />
-        <Collapse title={data[3].title} description={data[3].description} />
-      </div>
+      <div className={styles.values}>{values}</div>
     </main>
   );
 }

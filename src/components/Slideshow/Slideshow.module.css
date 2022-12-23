@@ -66,6 +66,10 @@
     border-radius: var(--border-radius-sm);
   }
 
+  .picture {
+    border-radius: var(--border-radius-sm);
+  }
+
   .chevron {
     height: 40px;
     width: 40px;

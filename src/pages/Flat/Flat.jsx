@@ -24,8 +24,8 @@ export default function Flat() {
       .catch(setError);
   }, []);
 
-  if (loading) return <p>Loading...</p>;
   if (error) console.log(error);
+  if (loading) return <p>Loading...</p>;
   if (!data) return null;
   const ad = data.filter((ad) => ad.id === id)[0];
 

@@ -24,6 +24,12 @@
 	border-radius: var(--border-radius);
 }
 
+@media screen and (max-width: 899px) {
+	.banner, .overlay {
+		border-radius: var(--border-radius-sm);
+	}
+}
+
 @media screen and (max-width: 599px) {
 	.banner {
 		justify-content: flex-start;

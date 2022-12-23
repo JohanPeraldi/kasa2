@@ -11,6 +11,10 @@
 	width: 309px;
 }
 
+.navlist > li {
+	cursor: pointer;
+}
+
 .navlist > li > a {
 	color: var(--color-primary);
 }
@@ -20,7 +24,7 @@
 }
 
 @media screen and (max-width: 899px) {
-	.header + svg {
+	.logo-wrapper > img {
 		width: 180px;
 	}
 	
@@ -35,9 +39,8 @@
 		margin-bottom: 10px;
 	}
 
-	.header + svg {
+	.logo-wrapper > img {
 		width: 145px;
-		height: 47px;
 	}
 
 	.navlist {
@@ -53,7 +56,7 @@
 		flex-direction: column;
 	}
 
-	#logo {
-		margin-left: 48.5px;
+	.logo-wrapper {
+		margin-bottom: 20px;
 	}
 }
