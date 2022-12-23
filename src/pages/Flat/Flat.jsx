@@ -13,7 +13,7 @@ export default function Flat() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const id = useParams().id;
+  const { id } = useParams();
 
   useEffect(() => {
     setLoading(true);
